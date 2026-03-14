@@ -88,7 +88,7 @@ const TeamCategory = ({ title, members }: { title: string, members: TeamMember[]
 import { LoadingScreen } from '@/components/loading-screen';
 
 export default function Home() {
-  const teamCategories = ['Faculty Advisor', 'Office Bearer', 'Vertical Head', 'Member'];
+  const teamCategories = ['Club Head', 'Co Head', 'Office Bearer', 'Vertical Head', 'Member'];
 
   // const { rive, RiveComponent } = useRive({
   //   src: 'acm.riv',

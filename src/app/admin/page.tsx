@@ -1015,7 +1015,8 @@ export default function AdminPage() {
                                                     <SelectValue placeholder="Select Category" />
                                                 </SelectTrigger>
                                                 <SelectContent>
-                                                    <SelectItem value="Faculty Advisor">Faculty Advisor</SelectItem>
+                                                    <SelectItem value="Club Head">Club Head</SelectItem>
+                                                    <SelectItem value="Co Head">Co Head</SelectItem>
                                                     <SelectItem value="Office Bearer">Office Bearer</SelectItem>
                                                     <SelectItem value="Vertical Head">Vertical Head</SelectItem>
                                                     <SelectItem value="Member">Member</SelectItem>
