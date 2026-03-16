@@ -31,22 +31,14 @@ const Section = ({ id, className, children }: { id?: string, className?: string,
 );
 
 const TeamMemberImage = ({ imageUrl, name }: { imageUrl: string, name: string }) => {
-  const [src, setSrc] = useState(imageUrl);
-
+  // Always use abhishek.jpg for team photo
   return (
     <div className="w-full h-full aspect-square bg-white relative">
       <Image
-        src={src}
+        src="/team/abhishek.jpg"
         alt={name}
         fill
         className="object-cover transition-transform duration-300 group-hover:scale-105"
-        onError={() => {
-          // Fallback strategy if needed, but for now just let it fail gracefully or show placeholder
-          // If it's a local path like /team/1.png, we might want to try other extensions?
-          // But the database has the full path.
-          // Let's just keep simple for now or use a placeholder.
-          setSrc('/placeholder-user.jpg'); // Pending: Make sure this exists or use a generic one
-        }}
       />
     </div>
   );
@@ -65,19 +57,10 @@ const TeamCategory = ({ title, members }: { title: string, members: TeamMember[]
     <h3 className="text-2xl font-headline font-bold tracking-tighter sm:text-3xl text-center mb-8">{title}</h3>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 justify-center">
       {members.map((member) => (
-        <div key={member.id} className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 flex flex-col items-center justify-center">
-          <TeamMemberImage imageUrl={member.image_url} name={member.name} />
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 p-4 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <div className="translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
-              <h3 className="font-headline text-xl font-bold text-white">{member.name}</h3>
-              <p className="text-sm text-primary mb-2">{member.role}</p>
-              <p className="text-xs text-white/80 line-clamp-4">{member.bio}</p>
-            </div>
-          </div>
-          <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-black/80 to-transparent p-4 text-center transition-opacity duration-300 group-hover:opacity-0">
-            <h3 className="font-headline text-lg font-bold text-white">{member.name}</h3>
-            <p className="text-sm text-primary">{member.role}</p>
-          </div>
+        <div key={member.id} className="rounded-lg shadow-lg flex flex-col items-center justify-center p-4 bg-white">
+          <h3 className="font-headline text-xl font-bold text-primary mb-2">{member.name}</h3>
+          <p className="text-sm text-primary mb-2">{member.role}</p>
+          <p className="text-xs text-gray-700 line-clamp-4">{member.bio}</p>
         </div>
       ))}
     </div>
