@@ -11,7 +11,7 @@ import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { ArrowRight, Calendar, Users, Award, Briefcase, Lightbulb, Bot, User, Loader2 } from 'lucide-react';
+import { ArrowRight, Calendar, Users, Award, Briefcase, Lightbulb, Bot, User, Loader2, Mail, Youtube } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useEvents } from '@/hooks/useEvents'; // ADDED HOOK
 import { useAbout } from '@/hooks/useAbout';
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
             <div className="flex flex-col justify-center space-y-4 text-center lg:text-left animate-fade-in-down">
               <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Welcome to <br /><span className=" text-purple-200 text-primary animate-glow-blue "> A b h i n a y </span><br/>
+                Welcome to <br /><span className=" text-purple-200 text-primary animate-glow-blue "> A b h i n a y </span><br />
               </h1>
               <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">IIIT Pune.</h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl mx-auto lg:mx-0">
@@ -134,7 +134,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full max-w-sm mx-auto h-[150px] md:h-[250px] lg:h-[350px] flex items-center justify-center p-4">
-              <Image 
+              <Image
                 src="/abhinay_logo_trans.png"
                 alt="Abhinay Logo"
                 width={500}

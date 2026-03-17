@@ -39,21 +39,41 @@ export function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    const result = await submitInquiry(values);
-    setIsSubmitting(false);
-
-    if (result.success) {
-      toast({
-        title: "Message Sent!",
-        description: result.message,
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/abhinay@iiitp.ac.in", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: values.name,
+            email: values.email,
+            message: values.message,
+            _subject: `New Contact Request via Abhinay Website from ${values.name}`
+        })
       });
-      form.reset();
-    } else {
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. We'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        throw new Error(data?.message || "Submission failed");
+      }
+    } catch (error) {
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: "Could not send the message. Please check your connection or try again later.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   }
 

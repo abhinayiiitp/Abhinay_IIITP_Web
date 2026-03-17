@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Code, Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Code, Github, Linkedin, Mail, Instagram, Youtube } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -20,7 +20,10 @@ export function Footer() {
             <Link href="https://www.instagram.com/abhinay.iiitp/" target="_blank" aria-label="Instagram">
               <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </Link>
-           { /*<Link href="https://www.linkedin.com/company/iiitpsigchi" target="_blank" aria-label="LinkedIn" >
+            <Link href="https://www.youtube.com/@AbhinayIIITP" target="_blank" aria-label="YouTube">
+              <Youtube className="h-5 w-5 text-muted-foreground hover:text-[#FF0000] transition-colors" />
+            </Link>
+            { /*<Link href="https://www.linkedin.com/company/iiitpsigchi" target="_blank" aria-label="LinkedIn" >
               <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </Link> */}
           </div>
