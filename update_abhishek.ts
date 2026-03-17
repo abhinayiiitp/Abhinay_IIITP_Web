@@ -18,7 +18,7 @@ async function main() {
     if (abhishek) {
         console.log("Found Abhishek:", abhishek);
         console.log("Updating image_url to /team/abhishek.jpg");
-        const { error: updateError } = await supabase.from('team_members').update({ image_url: '/team/abhishek.jpg' }).eq('id', abhishek.id);
+        const { error: updateError } = await supabase.from('team_members').update({ image_url: '/team/abhishe.jpg' }).eq('id', abhishek.id);
         if (updateError) console.error("Update error:", updateError);
         else console.log("Successfully updated!");
     } else {

@@ -51,7 +51,7 @@ const SectionTitle = ({ children, className }: { children: React.ReactNode, clas
 );
 
 import { TeamMember } from '@/hooks/useTeam';
-
+import { TeamFamilyTree } from '@/components/team-family-tree';
 const TeamSection = () => (
   <div className="flex flex-col items-center justify-center">
     <div className="mb-8 text-center">
@@ -68,6 +68,8 @@ const TeamSection = () => (
         />
       </div>
     </div>
+    
+    <TeamFamilyTree />
   </div>
 );
 

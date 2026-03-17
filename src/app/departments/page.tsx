@@ -1,7 +1,7 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clapperboard, PenTool, Megaphone, Video, Paintbrush, Lightsbulb, Music } from 'lucide-react';
+import { Clapperboard, PenTool, Megaphone, Video, Paintbrush, Lightbulb, Music } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
